@@ -1,5 +1,11 @@
-NChanges
-========
+##Welcome to the NChanges wiki!##
+
+This tool is great at creating reports that show API changes made between your software releases. 
+I am not sure why it isn't more popular. Perhaps there should be more explanation of how to use it. 
+If anyone would like more explanation, please let us know. 
+Comments encouraged.
+
+###NChanges###
 
 NChanges is a tool that detects and reports API changes in .NET assemblies.
 
@@ -15,10 +21,11 @@ that in mind.
 
 The basic idea:
 
-- Create snapshots of the different versions of your assemblies
-- Generate a report of the differences
+- Create **snapshots **of the different versions of your assemblies
+- Generate a **report **of the differences
 - Export the report as HTML or Excel
 
+###Snapshots###
 The snapshots are simple XML files that you can check into your source control
 to avoid checking in binaries. If you don't mind checking in your binaries,
 that's OK, you just have to generate the snapshots before generating your
@@ -27,6 +34,7 @@ reports.
     NChanges.Tool.exe snapshot C:\path\to\v1.0.0.0\assembly.dll
     NChanges.Tool.exe snapshot C:\path\to\v2.0.0.0\assembly.dll
 
+###Reports###
 Reports are also simple XML files, but they contain the differences between
 snapshots. You need at least two snapshots to generate a report, but you can
 include more to see the cumulative differences across versions.
@@ -37,6 +45,7 @@ If your snapshots are for different assemblies (you can even use wildcards) to
 generate your reports, you'll get a different report file for each different
 assembly.
 
+###Export###
 Exporting the report as Excel is just running the Excel command on the XML
 report file. You can specify more than one report file and it will combine all
 of them into different worksheets in the generated Excel file.
@@ -46,5 +55,6 @@ of them into different worksheets in the generated Excel file.
 Each of the different commands has their own options. Run NChanges.Tool.exe
 without any options to see the help.
 
+###GUI###
 If you don't want to do any of the above, use the GUI. If you have issues,
 please file them on [GitHub](https://github.com/jdiamond/NChanges/issues).
